@@ -304,8 +304,8 @@ services:
     networks:
       - ssrf_proxy_network
       - default
-    # ports:
-    #   - 3000:3000
+    ports:
+      - 3000:3000
 
 
   # The DifySandbox
