@@ -232,9 +232,6 @@ x-shared-env: &shared-api-worker-env
   VERSION: ${VERSION:-1.2.0}
   HOST_IP: ${HOST_IP:-0.0.0.0}
   NUMEXPR_MAX_THREADS: ${NUMEXPR_MAX_THREADS:-16}
-  PLUGIN_PYTHON_ENV_INIT_TIMEOUT: ${PLUGIN_PYTHON_ENV_INIT_TIMEOUT:-120}
-  PLUGIN_MAX_EXECUTION_TIMEOUT: ${PLUGIN_MAX_EXECUTION_TIMEOUT:-600}
-  PIP_MIRROR_URL: ${PIP_MIRROR_URL:-}
   PLUGIN_STORAGE_TYPE: ${PLUGIN_STORAGE_TYPE:-local}
   PLUGIN_STORAGE_LOCAL_ROOT: ${PLUGIN_STORAGE_LOCAL_ROOT:-/app/storage}
   PLUGIN_WORKING_PATH: ${PLUGIN_WORKING_PATH:-/app/storage/cwd}
@@ -355,7 +352,7 @@ services:
 
   # plugin daemon
   plugin_daemon:
-    image: langgenius/dify-plugin-daemon:0.0.3-local
+    image: langgenius/dify-plugin-daemon:0.0.7-local
     restart: always
     environment:
       # Use the shared environment variables.
