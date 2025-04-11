@@ -24,14 +24,13 @@ FROM base AS packages
 # RUN sed -i 's@deb.debian.org@mirrors.aliyun.com@g' /etc/apt/sources.list.d/debian.sources
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends gcc g++ libc-dev libffi-dev libgmp-dev libmpfr-dev libmpc-dev \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get install -y --no-install-recommends gcc g++ libc-dev libffi-dev libgmp-dev libmpfr-dev libmpc-dev
 
 # Install Python dependencies
 COPY pyproject.toml poetry.lock ./
-RUN poetry update --no-cache
-RUN poetry install --sync --no-cache --no-root \
-    && rm -rf ${POETRY_CACHE_DIR}
+RUN poetry update
+RUN pip install --upgrade aiohttp
+RUN poetry install --sync --no-cache --no-root
 
 # production stage
 FROM base AS production
