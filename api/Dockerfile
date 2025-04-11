@@ -28,8 +28,7 @@ RUN apt-get update \
 
 # Install Python dependencies
 COPY pyproject.toml poetry.lock ./
-RUN poetry update
-RUN pip install --upgrade aiohttp
+RUN poetry update --no-root
 RUN poetry install --sync --no-cache --no-root
 
 # production stage
