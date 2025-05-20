@@ -139,6 +139,7 @@ class FeatureService:
 
         if dify_config.BILLING_ENABLED and tenant_id:
             cls._fulfill_params_from_billing_api(features, tenant_id)
+        features.model_load_balancing_enabled = True
 
         if dify_config.ENTERPRISE_ENABLED:
             features.webapp_copyright_enabled = True
