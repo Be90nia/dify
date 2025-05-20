@@ -3,3 +3,4 @@ numpy
 pymysql
 SQLAlchemy
 tabulate
+pycryptodome
