@@ -210,4 +210,6 @@ mise.toml
 
 # Next.js build output
 .next/
-docker/volumes/
+
+# AI Assistant
+.roo/
