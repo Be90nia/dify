@@ -213,3 +213,4 @@ mise.toml
 
 # AI Assistant
 .roo/
+docker/volumes/
