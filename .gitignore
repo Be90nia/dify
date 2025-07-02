@@ -215,3 +215,4 @@ mise.toml
 # AI Assistant
 .roo/
 docker/volumes/
+api/.env.backup
